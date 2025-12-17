@@ -88,19 +88,24 @@ body {
     border-radius: 14px;
     border: 1px solid rgba(255,255,255,0.2);
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     gap: 12px;
 }
 
 .queue-element {
-    width: 80px;
-    padding: 12px;
-    background: orange;
-    color: black;
-    border-radius: 8px;
-    text-align: center;
-    font-weight: bold;
-    transition: transform 0.2s ease;
+  width: 60px;              /* Smaller width if many elements */
+  height: 60px;
+  padding: 12px 0;
+  background: orange;
+  color: black;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+  transition: transform 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .queue-element:hover {
