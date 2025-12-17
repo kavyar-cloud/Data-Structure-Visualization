@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stack Operations</title>
+    <link rel="stylesheet" href="styles/stack.css">
+</head>
+
+<body>
+
+    <header class="page-header">
+        <h1>Stack</h1>
+    </header>
+    <hr>
+
+
+        <!-- Info Card -->
+        <div class="info-card">
+            <h2>What is a Stack?</h2>
+            <p>A Stack is a linear data structure that follows a particular order in which the operations are performed. The order is <b>LIFO(Last In First Out)</b>. LIFO implies that the element that is inserted last, comes out first.</p>
+
+            <ul>
+                <li><b>Push:</b> Insert an element into the stack.</li>
+                <li><b>Pop:</b> Remove the top element.</li>
+                <li><b>Peek:</b> View the top element.</li>
+                <li><b>Display:</b> Show all stack elements.</li>
+            </ul>
+        </div>
+
+        <main class="page-main">
+
+        <!-- Create Stack -->
+        <div class="form-card">
+            <h2>Create Stack</h2>
+            <label>Enter Stack Size:</label>
+            <input id="stackSize" class="field-input" type="number" placeholder="Example: 5">
+
+            <button onclick="createStack()" class="primary-btn">Create Stack</button>
+        </div>
+
+        <!-- Input + Buttons -->
+        <div class="stack-controls">
+
+            <input id="stackValue" class="field-input small" type="text" placeholder="Value">
+
+            <button onclick="pushElement()" class="primary-btn small">Push</button>
+            <button onclick="popElement()" class="primary-btn small">Pop</button>
+            <button onclick="peekElement()" class="primary-btn small">Peek</button>
+            <button onclick="displayStack()" class="primary-btn small">Display</button>
+
+        </div>
+
+        <!-- Visual Stack -->
+        <div class="stack-visual" id="stackVisual"></div>
+
+        <!-- Status -->
+        <div id="statusBox" class="status-box">Stack status will appear here...</div>
+
+    </main>
+
+    <script src="stack.js"></script>
+
+</body>
+</html>

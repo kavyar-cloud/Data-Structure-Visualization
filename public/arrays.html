@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Array Operations</title>
+  <link rel="stylesheet" href="styles/arrays.css" />
+</head>
+<body>
+  <header class="page-header">
+    <h1>Arrays</h1>
+  </header>
+  <hr>
+
+
+    <!-- About Arrays Section -->
+    <section class="information">
+      <h2>What is an Array?</h2>
+      <p>
+        An array is a collection of elements of the same type stored at contiguous memory locations. 
+        It allows you to store multiple values under a single variable name and access them using an index.
+      </p>
+      <h3>Operations Explained:</h3>
+      <ul>
+        <li><strong>Insert:</strong> Add a new element at a specific index in the array.</li>
+        <li><strong>Delete:</strong> Remove an element from a specific index.</li>
+        <li><strong>Length:</strong> Get the number of elements currently in the array.</li>
+        <li><strong>Display:</strong> Show all elements of the array in order.</li>
+      </ul>
+    </section>
+    <main class="page-main">
+    <!-- Array Creation Form -->
+    <section class="card form-card" aria-labelledby="formTitle">
+      <h2 id="formTitle">Create Array</h2>
+
+      <label class="field-label">Enter Array Size:</label>
+      <input id="sizeInput" class="field-input" type="number" placeholder="Example: 5" min="1" />
+
+      <label class="field-label">Enter Elements (comma separated):</label>
+      <input id="valuesInput" class="field-input" type="text" placeholder="Example: 1,2,3" />
+
+      <div class="center">
+        <button id="createBtn" class="primary-btn">Create Array</button>
+      </div>
+    </section>
+
+    <!-- Display Section -->
+    <section class="card display-card" id="displayCard" aria-live="polite">
+      <div class="display-inner">
+        <div id="visualArea" class="visual-area">
+          <!-- array boxes will render here -->
+        </div>
+
+        <div id="statusBox" class="status-box">
+          <div id="statusText">Enter size and values, then click Create Array.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Operations Section -->
+    <section id="ops" class="card ops-card hidden">
+      <div class="ops-row">
+        <input id="insertVal" type="number" placeholder="Value to insert" class="small-input" />
+        <button onclick="handleInsert()" class="op-btn">Insert</button>
+
+        <input id="deleteIdx" type="number" placeholder="Index to delete" class="small-input" />
+        <button onclick="handleDelete()" class="op-btn">Delete</button>
+
+        <button onclick="showLength()" class="op-btn">Length</button>
+        <button onclick="renderArray()" class="op-btn">Display</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="array.js"></script>
+</body>
+</html>

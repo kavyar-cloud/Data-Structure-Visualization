@@ -1,0 +1,244 @@
+/* GENERAL PAGE */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Segoe UI, sans-serif;
+    background: linear-gradient(135deg, #0d1b3d, #14265c);
+    color: white;
+    overflow-y: auto;
+    height: 100%;
+}
+
+.page-header {
+    padding: 28px 16px 8px;
+    text-align: center;
+    margin-bottom: 24px;
+}
+.page-header h1 {
+    margin: 0;
+    font-size: 44px;
+    text-shadow: 0 3px 10px rgba(0,0,0,0.6);
+}
+
+/* CARDS */
+.form-card{
+    background: rgba(255,255,255,0.07);
+    border-radius: 15px;
+    padding: 25px 30px;
+    margin: 25px auto;
+    border: 1px solid rgba(255,255,255,0.15);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    max-width: 700px;
+}
+
+.info-card{
+    margin-bottom: 20px;
+    color: #e0e0e0; /* Light gray for subheading */
+    /* text-align: center; */
+    padding: 1rem 4rem 2rem 4rem;
+    font-size: 25px;
+    animation: fadeInUp 1s ease forwards;
+ }
+
+/* INPUTS */
+.field-input {
+    width: 100%;
+    padding: 12px 15px;
+    margin: 15px 0;
+    border-radius: 12px;
+    border: none;
+    background: rgba(255,255,255,0.12);
+    color: #fff;
+}
+.field-input.small {
+    width: 200px;
+}
+
+/* BUTTONS */
+.primary-btn {
+    background: linear-gradient(135deg, #ff9800, #ffc74d);
+    border: none;
+    padding: 12px 25px;
+    border-radius: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 10px;
+}
+.primary-btn.small {
+    padding: 10px 18px;
+}
+
+/* QUEUE VISUAL */
+.stack-visual {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 12px;
+    flex-wrap: wrap;        /* elements wrap if row is full */
+    padding: 15px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 14px;
+    border: 1px solid rgba(255,255,255,0.2);
+    min-height: 100px;
+    width: 100px;
+    margin: 25px auto;
+}
+
+
+
+/* Queue element boxes */
+.queue-element {
+    /* width: 60px; */
+    height: 40px;
+    background: linear-gradient(135deg, #ff9800, #ffc74d);
+    color: black;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 18px;
+    transition: transform 0.2s ease;
+}
+
+
+.queue-element:hover {
+    transform: scale(1.05);
+}
+
+/* Empty slots */
+.queue-element.empty {
+    background: rgba(255,255,255,0.1);
+    color: rgba(255,255,255,0.3);
+}
+
+/* STATUS BOX */
+.status-box {
+    width: 400px;
+    margin: auto;
+    background: rgba(255,255,255,0.1);
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.2);
+    text-align: center;
+    margin-top: 20px;
+}
+.stack-controls{
+    text-align: center;
+
+}
+
+.page-main {
+  padding-bottom: 50px; /* leave space at bottom */
+}
+
+
+/* ============================= */
+/* STACK – MINIMAL ANIMATIONS   */
+/* ============================= */
+
+/* Global smooth transitions */
+* {
+    transition: background-color 0.3s ease,
+                transform 0.25s ease,
+                box-shadow 0.25s ease,
+                opacity 0.25s ease;
+  }
+  
+  /* Page load fade */
+  body {
+    animation: stackPageFade 0.7s ease forwards;
+  }
+  
+  @keyframes stackPageFade {
+    from {
+      opacity: 0;
+      transform: scale(0.98);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  /* Card hover lift */
+  /* .form-card:hover,
+  .info-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 35px rgba(0,0,0,0.7);
+  } */
+  
+  /* Input focus glow */
+  .field-input:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255,152,0,0.3);
+  }
+  
+  /* Button interactions */
+  .primary-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 22px rgba(255,152,0,0.45);
+  }
+  
+  .primary-btn:active {
+    transform: scale(0.95);
+  }
+  
+  /* Stack element enter (push) */
+  /* .queue-element {
+    animation: stackPush 0.3s ease;
+  } */
+  
+  @keyframes stackPush {
+    from {
+      opacity: 0;
+      transform: translateY(10px) scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+  
+  /* Stack element pop (apply via JS) */
+  /* .queue-element.popping {
+    animation: stackPop 0.25s ease forwards;
+  } */
+  
+  @keyframes stackPop {
+    to {
+      opacity: 0;
+      transform: translateY(-12px) scale(0.85);
+    }
+  }
+  
+  /* Highlight top element */
+  .queue-element.top {
+    box-shadow: 0 0 16px rgba(255, 199, 77, 0.8);
+    border: 2px solid #000;
+  }
+  
+  /* Status update pulse */
+  .status-box {
+    animation: statusPulse 0.4s ease;
+  }
+  
+  @keyframes statusPulse {
+    from {
+      transform: scale(0.95);
+      opacity: 0.7;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  /* Accessibility: reduce motion */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation: none !important;
+      transition: none !important;
+    }
+  }
+  

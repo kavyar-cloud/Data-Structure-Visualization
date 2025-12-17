@@ -1,0 +1,225 @@
+/* GENERAL PAGE */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Segoe UI, sans-serif;
+    background: linear-gradient(135deg, #0d1b3d, #14265c);
+    color: white;
+}
+
+.page-header {
+    padding: 28px 16px 8px;
+    text-align: center;
+    /* border-bottom: 1px solid rgba(255,255,255,0.03); */
+    margin-bottom: 24px;
+}
+.page-header h1 {
+    margin: 0;
+    font-size: 44px;
+    color: white;
+    text-shadow: 0 3px 10px rgba(0,0,0,0.6);
+    animation: fadeInDown 1s ease forwards;
+}
+
+.page-main {
+    width: 80%;
+    margin: auto;
+    padding-bottom: 50px;
+}
+
+/* GLASS CARD */
+.form-card {
+    background: rgba(255,255,255,0.07);
+    border-radius: 15px;
+    padding: 25px 30px;
+    margin: 25px auto;
+    border: 1px solid rgba(255,255,255,0.15);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    max-width: 700px;
+}
+
+.info-card{
+    margin-bottom: 20px;
+    color: #e0e0e0; /* Light gray for subheading */
+    /* text-align: center; */
+    padding: 1rem 4rem 2rem 4rem;
+    font-size: 25px;
+    animation: fadeInUp 1s ease forwards;
+ }
+
+/* INPUTS */
+.field-input {
+    width: 100%;
+    padding: 12px 15px;
+    margin: 15px 0;
+    border-radius: 12px;
+    border: none;
+    background: rgba(255,255,255,0.12);
+    color: #fff;
+}
+
+.field-input.small {
+    width: 200px;
+}
+
+/* BUTTONS */
+.primary-btn {
+    background: linear-gradient(135deg, #ff9800, #ffc74d);
+    border: none;
+    padding: 12px 25px;
+    border-radius: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.primary-btn.small {
+    padding: 10px 18px;
+}
+
+/* QUEUE VISUAL */
+.queue-visual {
+    width: 100%;
+    max-width: 600px;
+    min-height: 120px;
+    margin: 40px auto;
+    padding: 15px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 14px;
+    border: 1px solid rgba(255,255,255,0.2);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.queue-element {
+    width: 80px;
+    padding: 12px;
+    background: orange;
+    color: black;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+    transition: transform 0.2s ease;
+}
+
+.queue-element:hover {
+    transform: scale(1.05);
+}
+
+/* STATUS BOX */
+.status-box {
+    width: 400px;
+    margin: auto;
+    background: rgba(255,255,255,0.1);
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.2);
+    text-align: center;
+    margin-top: 20px;
+}
+.queue-controls{
+    text-align: center;
+}
+
+/* ============================= */
+/* MINIMAL QUEUE / STACK EFFECTS */
+/* ============================= */
+
+/* Global smooth transitions (safe & subtle) */
+* {
+    transition: background-color 0.3s ease,
+                transform 0.25s ease,
+                box-shadow 0.25s ease,
+                opacity 0.25s ease;
+  }
+  
+  /* Page fade-in */
+  body {
+    animation: pageFadeIn 0.7s ease forwards;
+  }
+  
+  @keyframes pageFadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.98);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  /* Input focus glow */
+  .field-input:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255,152,0,0.3);
+  }
+  
+  /* Button feedback (no lift, only scale) */
+  .primary-btn:hover {
+    box-shadow: 0 6px 16px rgba(255,152,0,0.4);
+  }
+  
+  .primary-btn:active {
+    transform: scale(0.95);
+  }
+  
+  /* Queue element enter animation (enqueue / push) */
+  /* .queue-element {
+    animation: elementEnter 0.3s ease;
+  } */
+  
+  @keyframes elementEnter {
+    from {
+      opacity: 0;
+      transform: translateY(10px) scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+  
+  /* Queue element remove animation (apply via JS) */
+  /* .queue-element.removing {
+    animation: elementExit 0.25s ease forwards;
+  } */
+  
+  @keyframes elementExit {
+    to {
+      opacity: 0;
+      transform: translateY(-10px) scale(0.85);
+    }
+  }
+  
+  /* Highlight active element (peek/front/top) */
+  .queue-element.active {
+    box-shadow: 0 0 14px rgba(255, 183, 77, 0.9);
+    border: 2px solid #000;
+  }
+  
+  /* Status update pulse */
+  .status-box {
+    animation: statusPulse 0.4s ease;
+  }
+  
+  @keyframes statusPulse {
+    from {
+      opacity: 0.7;
+      transform: scale(0.97);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  /* Accessibility: reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation: none !important;
+      transition: none !important;
+    }
+  }
+  

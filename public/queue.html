@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Queue Operations</title>
+    <link rel="stylesheet" href="styles/queue.css">
+</head>
+
+<body>
+
+    <header class="page-header">
+        <h1>Queue</h1>
+    </header>
+    <hr>
+
+        <!-- Info Card -->
+        <div class="info-card">
+            <h2>What is a Queue?</h2>
+            <p>
+                A queue is a linear data structure that follows the <b>First In, First Out (FIFO) </b> principle, meaning the first element added to the queue is the first one to be removed. 
+            </p>
+
+            <ul>
+                <li><strong>Enqueue:</strong> Insert element at rear</li>
+                <li><strong>Dequeue:</strong> Remove element from front</li>
+                <li><strong>Peek:</strong> View front element</li>
+                <li><strong>Is Empty:</strong> Check if queue is empty</li>
+                <li><strong>Is Full:</strong> Check if queue is full</li>
+            </ul>
+        </div>
+
+        <main class="page-main">
+
+        <!-- Create Queue -->
+        <div class="form-card">
+            <h2>Create Queue</h2>
+            <label>Enter Queue Size:</label>
+            <input id="queueSize" class="field-input" type="number" placeholder="Example: 5">
+
+            <button onclick="createQueue()" class="primary-btn">Create Queue</button>
+        </div>
+
+        <!-- Controls -->
+        <div class="queue-controls">
+            <input id="queueValue" class="field-input small" type="text" placeholder="Value">
+
+            <button onclick="enqueueElement()" class="primary-btn small">Enqueue</button>
+            <button onclick="dequeueElement()" class="primary-btn small">Dequeue</button>
+            <button onclick="peekElement()" class="primary-btn small">Peek</button>
+            <button onclick="displayQueue()" class="primary-btn small">Display</button>
+        </div>
+
+        <!-- Visual Queue -->
+        <div class="queue-visual" id="queueVisual"></div>
+
+        <!-- Status -->
+        <div id="statusBox" class="status-box">
+            Queue status will appear here...
+        </div>
+
+    </main>
+
+    <script src="queue.js"></script>
+
+</body>
+</html>
