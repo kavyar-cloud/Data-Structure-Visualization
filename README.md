@@ -41,10 +41,10 @@ You used vanilla JavaScript, making the visualization logic clear and approachab
 
 ℹ️ Features
 
--> Interactive visual demonstrations of basic data structures
--> DOM-based animations without heavy frameworks
--> Simple UI/UX focusing on educational clarity
--> Node.js backend logic to power operations if needed
+- Interactive visual demonstrations of basic data structures
+- DOM-based animations without heavy frameworks
+- Simple UI/UX focusing on educational clarity
+- Node.js backend logic to power operations if needed
 
 -------------------------------------
 
@@ -71,22 +71,22 @@ http://localhost:PORT
 
 Through building this project from scratch, I gained hands-on experience in:
 
--> Visual representation of data structures
--> DOM manipulation with JavaScript
--> Animation lifecycle management
--> CSS architecture using root variables
--> UI/UX interaction design
--> Backend integration using Node.js
+- Visual representation of data structures
+- DOM manipulation with JavaScript
+- Animation lifecycle management
+- CSS architecture using root variables
+- UI/UX interaction design
+- Backend integration using Node.js
 
 ------------------------------------
 
 📈 Future Enhancements
 
--> Add Linked List visualization
--> Add Stack and Queue animations
--> Add Sorting algorithm animations
--> Convert to Canvas/SVG-based rendering
--> Deploy backend to cloud (Render/Heroku)
+- Add Linked List visualization
+- Add Stack and Queue animations
+- Add Sorting algorithm animations
+- Convert to Canvas/SVG-based rendering
+- Deploy backend to cloud (Render/Heroku)
 
 -------------------------------------
 
